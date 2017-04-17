@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrimeNumbersGUI2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Prime Numbers GUI2" Height="350" Width="525">
     <Grid>
         <Button Content="Znajdź n-tą liczbę pierwszą" HorizontalAlignment="Left" Margin="160,10,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
         <Label Name="Label" Content="Rozgrzewam liczydło..." HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="310"/>

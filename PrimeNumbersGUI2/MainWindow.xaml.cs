@@ -30,12 +30,20 @@ namespace PrimeNumbersGUI2
 
 		private async void Button_Click(object sender, EventArgs e)
 		{
-			int input = Int32.Parse(TextBox.Text);
-			Label.Content = $"Podałeś {input}. Liczę... Chwileczkę";
-			var progress = new Progress<string>(s => Label.Content = s);
+			int input = 0;
+			try
+			{
+				input = Int32.Parse(TextBox.Text);
+				Label.Content = $"Znajduję {input}. liczbę pierwszą. Liczę... Chwileczkę";
+			}
+			catch (FormatException ex)
+			{
+				Label.Content = $"Podałeś: \"{TextBox.Text}\". Coś poszło nie tak...";
+				return;
+			}
 			await Task.Factory.StartNew(() => primeNumber.Find(input),
 										TaskCreationOptions.LongRunning);
-			Label.Content = $"Liczbą pierwszą {primeNumber.GetKey()} z kolei jest {primeNumber.GetValue()}";
+			Label.Content = $"{primeNumber.GetKey()}. liczbą pierwszą z kolei jest: {primeNumber.GetValue()}";
 		}
     }
 }
